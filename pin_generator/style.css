@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #10101b;
+}
+
+.container {
+  margin-top: 30px;
+  height: 100vh;
+}
+
+.halfWidth {
+  height: 576px;
+  padding: 40px;
+  background-color: #222436;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #3d4153;
+  color: white;
+}
+
+input[type="text"]:focus {
+  background-color: #3d4153;
+  color: white;
+}
+
+#generatePin {
+  margin-top: 140px;
+  background-color: #495bc3;
+  color: white;
+  width: 180px;
+  padding: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 8px solid #39458c;
+  border-radius: 50%;
+}
+.numbers {
+  margin: 20px 0;
+}
+.calcRow {
+  width: 100%;
+}
+.button {
+  width: 20%;
+  margin: 5px;
+  color: white;
+  background-color: #425062;
+  padding: 20px 0;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: -4px;
+  border-radius: 10px;
+}
+.submit {
+  width: 100%;
+}
+#submitBtn {
+  padding: 10px 0;
+  width: 60%;
+  border-radius: 5px;
+  background-color: #495bc3;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#warningMessage {
+  color: #db3c5f;
+}
+
+.notifySection {
+  color: white;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.notify {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #222436;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 16px;
+  display: none;
+}
+
+#warningMessage{
+  display: none;
+}
