@@ -1,0 +1,10 @@
+# ignoring node modules
+
+node_modules/
+
+# package file
+
+package-lock.json
+
+package.json
+
