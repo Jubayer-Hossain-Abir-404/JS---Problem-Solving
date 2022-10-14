@@ -11,7 +11,18 @@
 </head>
 <body>
     
+    <main>
+        <div class="inputSection">
+            <h1 class="text-center text-success">Search the country you like</h1>
+            <div class="input-group mt-3 mb-3 w-50 mx-auto">
+                <input id="searchInput" type="text" class="form-control" placeholder="Search by a country's name" aria-label="Country Name"
+                    aria-describedby="button-addon2">
+                <button onclick="searchButton()" class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+        </div>
 
+        <div id="errorMessage"></div>
+    </main>
 
     <script src="./js/sports.js"></script>
 </body>
