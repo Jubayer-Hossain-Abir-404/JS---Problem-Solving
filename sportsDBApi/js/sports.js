@@ -24,7 +24,7 @@ const loadData = async (inputValue) =>{
         const url = `https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?c=${inputValue}`;
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data.countries);
+        // console.log(data.countries);
         if(data.countries==null){
             errorMessage('null');
         }
@@ -44,7 +44,7 @@ const displayData = (countries) => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-            <div class="card">
+            <div class="card" style="cursor: pointer;">
                 <img src="${country.strBadge}" class="card-img-top" alt="leagueImage">
                 <div class="card-body">
                     <h5 class="card-title">${country.strLeague}</h5>
@@ -72,3 +72,4 @@ const errorMessage = (inputValue) => {
   }
   eMessage.appendChild(h2);
 };
+
