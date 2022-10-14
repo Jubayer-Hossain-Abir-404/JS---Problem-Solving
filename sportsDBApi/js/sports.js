@@ -12,24 +12,48 @@ const searchButton = () =>{
 
 
 const eMessage = document.getElementById("errorMessage");
+const leagueList = document.getElementById("leagueList");
+
 const clearContent = () =>{
     eMessage.textContent = '';
+    leagueList.textContent = '';
 }
 
 const loadData = async (inputValue) =>{
     try{
-        const url = `https://www.thesportsdb.com/api/v31/json/2/search_all_leagues.php?c=${inputValue}`;
+        const url = `https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?c=${inputValue}`;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data.countries);
         if(data.countries==null){
             errorMessage('null');
         }
+        else{
+            displayData(data.countries);
+        }
     }
     catch(error){
         errorMessage(error);
     }
     
+}
+
+const displayData = (countries) => {
+    clearContent();
+    countries.forEach(country => {
+        const div = document.createElement('div');
+        div.classList.add('col');
+        div.innerHTML = `
+            <div class="card">
+                <img src="${country.strBadge}" class="card-img-top" alt="leagueImage">
+                <div class="card-body">
+                    <h5 class="card-title">${country.strLeague}</h5>
+                    <p class="card-text">${country.strDescriptionEN.slice(0,250)}</p>
+                </div>
+            </div>
+        `;
+        leagueList.appendChild(div);
+    });
 }
 
 const errorMessage = (inputValue) => {
