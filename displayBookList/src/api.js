@@ -20,7 +20,8 @@ const displayData = (books, totalCount) => {
         "border",
         "border-gray-200",
         "rounded-lg",
-        "shadow"
+        "shadow",
+        "paginateItem"
       );
       div.innerHTML = `
             ${
