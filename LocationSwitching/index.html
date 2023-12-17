@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .row div {
+        padding: 50px;
+        /* transition: all 1s ease-in-out, transform 1s ease-in-out; */
+      }
+
+      .row div {
+        transition: all 10s;
+      }
+
+      .translate1{
+        transform: translateX(0);
+      }
+      .translate2{
+        transform: translateX(50%);
+      }
+      .translate3{
+        transform: translateX(100%);
+      }
+      /* .row div:hover {
+        transform: translateX(500px);
+      } */
+    </style>
+  </head>
+  <body>
+    <section id="container">
+      <div class="row">
+        <div class="item" style="background-color: bisque">1</div>
+        <div class="item" style="background-color: red">2</div>
+        <div class="item" style="background-color: yellow">3</div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+      integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function yourFunction() {
+        $container = $(".row");
+        $divList = $(".item");
+
+        $divCopy = $divList.clone(true);
+        $(".item").remove();
+
+        while ($divCopy.length > 0) {
+          //chose random index of div array
+          var randomIndex = Math.floor(Math.random() * $divList.length);
+          if($divCopy[randomIndex]!=null){
+            if(randomIndex==0){
+                $divCopy[randomIndex].classList.add('translate1');
+            }else if(randomIndex==1){
+                $divCopy[randomIndex].classList.add('translate2');
+            }else if(randomIndex==2){
+                $divCopy[randomIndex].classList.add('translate3');
+            }
+          }
+          console.log($divCopy[randomIndex]);
+            
+          $container.append($divCopy.splice(randomIndex, 1));
+        }
+
+        setTimeout(yourFunction, 5000);
+      }
+
+      yourFunction();
+    </script>
+  </body>
+</html>
